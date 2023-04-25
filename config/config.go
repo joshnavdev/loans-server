@@ -6,7 +6,7 @@ import (
 	"os"
 
 	"github.com/joho/godotenv"
-	"github.com/joshnavdev/loans-server/utils"
+  "github.com/joshnavdev/loans-server/commons"
 )
 
 type AppConfig struct {
@@ -45,11 +45,11 @@ func LoadConfig() (config Config, err error) {
     return
   }
 
-  port := utils.GetValue(os.Getenv("PORT"), "3000")
-  host := utils.GetValue(os.Getenv("HOST"), "127.0.0.1")
+  port := common.GetValue(os.Getenv("PORT"), "3000")
+  host := common.GetValue(os.Getenv("HOST"), "127.0.0.1")
   addr := fmt.Sprintf("%s:%s", host, port)
 
-  dbUser := utils.GetValue(os.Getenv("DB_USER"), "root")
+  dbUser := common.GetValue(os.Getenv("DB_USER"), "root")
   dbPass := os.Getenv("DB_PASS")
   dbHost := os.Getenv("DB_HOST")
   dbName := os.Getenv("DB_NAME")

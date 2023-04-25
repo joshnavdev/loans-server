@@ -1,4 +1,4 @@
-package utils
+package interfaces
 
 type Repository[T comparable] interface {
   Create(model T) error

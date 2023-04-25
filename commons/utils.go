@@ -1,4 +1,4 @@
-package utils
+package common
 
 func GetValue[K comparable] (value, defaultValue K) K {
   if isNil(value) {
